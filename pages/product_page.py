@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
 from selenium.common.exceptions import NoAlertPresentException
+from .base_page import BasePage
 import math
 
 class ProductPage(BasePage):
@@ -37,3 +38,7 @@ class ProductPage(BasePage):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         basket_total = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL).text
         assert product_price in basket_total, "Basket total does not match the product price"
+    
+class ProductPage(BasePage):
+    # Класс наследует все методы BasePage, включая is_element_present
+    pass
