@@ -43,4 +43,9 @@ class BasePage():
             self.browser.find_element(how, what)
         except NoSuchElementException:
             return False
-        return True    
+        return True
+    
+    def go_to_basket(self):
+        basket_button = self.browser.find_element(*BasePageLocators.BASKET_BUTTON)
+        basket_button.click()
+    
